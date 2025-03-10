@@ -1,0 +1,305 @@
+.discussions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 100px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+}
+
+.create-discussion-section {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+
+    h2 {
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.discussion-form {
+    .form-group {
+        margin-bottom: 1rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+
+            @media (max-width: 768px) {
+                font-size: 0.85rem;
+            }
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--input-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+
+            @media (max-width: 768px) {
+                padding: 0.6rem;
+                font-size: 0.95rem;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+            }
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+
+            @media (max-width: 768px) {
+                min-height: 100px;
+            }
+        }
+    }
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    @media (max-width: 768px) {
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+
+    &:hover {
+        background: var(--primary-color-dark);
+    }
+}
+
+.discussions-list {
+    h2 {
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.discussion-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-input,
+    .category-filter {
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        background: var(--input-bg);
+        color: var(--text-color);
+        font-size: 1rem;
+
+        @media (max-width: 768px) {
+            padding: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+        }
+    }
+
+    .search-input {
+        max-width: 280px;
+        flex: 1;
+        border: 1px solid #e5e5e5 !important;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
+    }
+
+    .category-filter {
+        min-width: 150px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
+
+.discussion-cards {
+    display: grid;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+        gap: 0.75rem;
+    }
+}
+
+.discussion-card {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.discussion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    h3 {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 1.25rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.category-badge {
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-color-light);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+.discussion-content {
+    color: var(--text-color-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.discussion-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding-top: 0.75rem;
+    }
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color-secondary);
+    font-size: 0.875rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.discussion-stats {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color-secondary);
+    font-size: 0.875rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+}

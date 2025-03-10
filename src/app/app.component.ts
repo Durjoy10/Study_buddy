@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent],
   template: `
-    <div style="display: flex; flex-direction: column; min-height: 100vh;">
-      <app-header></app-header>
-      <main style="flex-grow: 1;">
-        <router-outlet></router-outlet>
-      </main>
-      <app-footer></app-footer>
-    </div>
+    <app-header></app-header>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
   `,
+  styles: [`
+    .main-content {
+      padding-top: 50px; 
+      min-height: 100vh;
+    }
+  `]
 })
-export class AppComponent {
-  title = 'study-buddy';
-}
+export class AppComponent { }
