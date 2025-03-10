@@ -5,7 +5,9 @@
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist/demo/browser"
+                "distDir": "dist/demo/browser",
+                "buildCommand": "npm run vercel-build",
+                "installCommand": "npm install"
             }
         }
     ],
